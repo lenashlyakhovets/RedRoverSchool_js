@@ -2,8 +2,6 @@
 
 // 1.1 Напишите программу по согласованию отпуска в зависимости от месяца. Если месяц “July” или “August”, то программа должна показать - ‘approved’, если другие месяцы, то - “denied”.
 
-// 1_task
-
 let month = 'May';
 
 if (month == 'July' || month == 'August') {
@@ -15,13 +13,44 @@ if (month == 'July' || month == 'August') {
 // 1.2 Напишите простенький калькулятор (*, /, +, -). Проверьте ваш код на охват исключений для арифметических операций.
 // У вас должны быть две переменные для исходных чисел и одна для оператора. В зависимости от оператора, должно происходить то или иное арифметическое действие и выводиться результат в консоль.
 
-// 2_task
+let num1 = 8;
+let num2 = 4;
+let operator = "-";
 
-let num1 = 1;
-let num2 = 2;
+if (operator == "/" && num2 != 0) {
+    let result = num1 / num2;
+    console.log(result);
+} else if (operator == "*") {
+    let result = num1 * num2;
+    console.log(result);
+} else if (operator == "+") {
+    let result = +(num1 + num2);
+    console.log(result);
+} else if (operator == "-") {
+    let result = num1 - num2;
+    console.log(result);
+} else if (operator == "/" && num2 == 0) {    
+    console.log(Infinity);
+}
 
 // 1.3 Решите задачу с помощью пройденных тем:
 // «Улитка ползёт вверх по стене высотой 5 метров. Каждый день она проползает вверх на 3 метра, а каждую ночь съезжает вниз на 2 метра. За сколько дней она доползёт до вершины стены.»
+
+let height = 5;        // 0+3-2=1  1+3-2=2  2+3-2=3   3+3-2=4  4+3-2=5       
+let dayUp = 3;          // let x = x + 1        
+let nightDown = 2;      //     
+let day = 1;
+let step = dayUp - nightDown;
+
+if ( ) {
+
+}
+    day = day + step;
+    console.log('done');
+else {
+    console.log('not finish');
+}
+
 
 // Креативное задание:
 // 2.1 Напишите следующую программу:
