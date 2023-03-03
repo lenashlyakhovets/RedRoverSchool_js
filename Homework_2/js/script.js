@@ -91,3 +91,28 @@ if (cup == 'small') {
 
 let result = `Enjoy delicious ${nameCoffee}!`;
 console.log(result);
+
+
+
+/* let kidsTicket, adultsTicket;
+let seniors, isVeterans;
+let age, price;
+let totalPrice, guestNum;
+
+kidsTicket = "Hello Kitty";
+adultsTicket = "Ray";
+age = +prompt("How old are you?");
+isVeterans = prompt("Are you veteran? Please enter yes/no answer", 'no');
+guestNum = +prompt("How many tickets do you need?");
+price = 100;
+
+if (age < 18) {
+  totalPrice = guestNum * (price / 2);
+  console.log(`Price for ${guestNum} tickets for ${kidsTicket} movie wil be ${totalPrice} USD`);
+} else if (age >= 18 && isVeterans === 'no') {
+  totalPrice = guestNum * price;
+  console.log(`Price for ${guestNum} tickets for ${adultsTicket} movie wil be ${totalPrice} USD`);
+} else if (age >= 18 && isVeterans === 'yes') {
+  totalPrice = guestNum * (price * 0.8);
+  console.log(`Price for ${guestNum} tickets for ${adultsTicket} movie wil be ${totalPrice} USD`);
+} */
