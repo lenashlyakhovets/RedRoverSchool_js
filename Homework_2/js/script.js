@@ -56,28 +56,38 @@ console.log(step1 +  step2 +  step3 +  step4);
 // - Компоненты кофе не влияют на стоимость.
 // - Используйте подходящую комбинацию условий if, (else if), else для решения задачи.
 
+let coffee1 = 'Americano';
+let recept1 = `Pour some hot water for ${coffee1}.`;
+let coffee2 = 'FlatWhite';
+let recept2 = `Pour some hot milk for ${coffee2}.`;
 let cup = 'small';
-let coffee = 'two';
-let water = 'hot water';
+let spoon = 'two';
 let sugar = 'one';
+let priceSmall = 2;
+let priceMedium = 4;
+let priceBig = 6;
 
-let nameCoffee = prompt("Какое кофе Вы хотите?");
-const step1 = `1. Take ${cup} cup of ${nameCoffee}.`;
-if (cup == 'small') {
-    console.log('Стоимость кофе 2 рубля.');
-} else if (cup == 'medium') {
-    console.log('Стоимость кофе 4 рубля.');
-} else if (cup == 'big') {
-    console.log('Стоимость кофе 6 рубля.');
+let nameCoffee = prompt(`What kind of coffee do you want: ${coffee1} or ${coffee2}?`);
+
+let step1 = `Take ${cup} cup of ${nameCoffee}.`;
+console.log(step1);
+
+if (nameCoffee == coffee1) {
+    console.log(recept1);
+} else {
+    console.log(recept2);
 }
 
+let step2 = `Put ${sugar} spoon(s) of sugar.`;
+console.log(step2);
 
+if (cup == 'small') {
+    console.log(`The cost of coffee is ${priceSmall} rubles.`);
+} else if (cup == 'medium') {
+    console.log(`The cost of coffee is ${priceMedium} rubles.`);
+} else if (cup == 'big') {
+    console.log(`The cost of coffee is ${priceBig} rubles.`);
+}
 
-
-
-const step2 = `2. Put ${coffee} spoon(s) of coffee.`;
-const step3 = `3. Pour some ${water}.`;
-const step4 = `4. Put ${sugar} spoon(s) of sugar.`;
-const result = `Enjoy delicious coffee!`;
- 
-document.write(step1, '<br>', step2, '<br>', step3, '<br>', step4, '<br>', result);
+let result = `Enjoy delicious ${nameCoffee}!`;
+console.log(result);
