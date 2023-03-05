@@ -116,3 +116,22 @@ if (age < 18) {
   totalPrice = guestNum * (price * 0.8);
   console.log(`Price for ${guestNum} tickets for ${adultsTicket} movie wil be ${totalPrice} USD`);
 } */
+
+/* let age = 100;
+let amountTicket = 1;
+let price = 100;
+let totalPrice;
+
+if (age < 2) {
+  totalPrice = amountTicket * (price * 0.1);
+  console.log(`Price for you will be ${totalPrice} USD`);
+} else if (age < 18) {
+  totalPrice = amountTicket * (price*0.5);
+  console.log(`Price for you will be ${totalPrice} USD`);
+} else if (age < 65) {
+  totalPrice = amountTicket * price;
+  console.log(`Price for you will be ${totalPrice} USD`);
+} else {
+  totalPrice = amountTicket * (price * 0.6);
+  console.log(`Price for you will be ${totalPrice} USD`);
+} */
