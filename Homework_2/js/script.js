@@ -2,9 +2,10 @@
 
 // 1.1 Напишите программу по согласованию отпуска в зависимости от месяца. Если месяц “July” или “August”, то программа должна показать - ‘approved’, если другие месяцы, то - “denied”.
 
-let month = 'May';
+let myMonth = 'july';
+let month = myMonth.toLowerCase();
 
-if (month == 'July' || month == 'August') {
+if (month == 'july' || month == 'august') {
     console.log('approved');
 } else {
     console.log('denied');
@@ -17,10 +18,7 @@ let num1 = +prompt("Введите первое число");
 let operator = prompt("Введите оператор");
 let num2 = +prompt("Введите второе число");
 
-if (operator == "/" && num2 != 0) {
-    let result = num1 / num2;
-    console.log(result);
-} else if (operator == "*") {
+if (operator == "*") {
     let result = num1 * num2;
     console.log(result);
 } else if (operator == "+") {
@@ -29,7 +27,10 @@ if (operator == "/" && num2 != 0) {
 } else if (operator == "-") {
     let result = num1 - num2;
     console.log(result);
-} else if (operator == "/" && num2 == 0) {    
+} else if (operator == "/" && num2 != 0) {
+      let result = num1 / num2;
+      console.log(result);
+} else {    
     console.log(Infinity);
 }
 
