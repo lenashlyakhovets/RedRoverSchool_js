@@ -60,7 +60,6 @@ let coffee1 = 'Americano';
 let recept1 = `Pour some hot water for ${coffee1}.`;
 let coffee2 = 'FlatWhite';
 let recept2 = `Pour some hot milk for ${coffee2}.`;
-let cup = 'small';
 let spoon = 'two';
 let sugar = 'one';
 let priceSmall = 2;
@@ -68,8 +67,9 @@ let priceMedium = 4;
 let priceBig = 6;
 
 let nameCoffee = prompt(`What kind of coffee do you want: ${coffee1} or ${coffee2}?`);
+let sizeCup = prompt(`What cup size do you want: small, medium, big?`);
 
-let step1 = `Take ${cup} cup of ${nameCoffee}.`;
+let step1 = `Take ${sizeCup} cup of ${nameCoffee}.`;
 console.log(step1);
 
 if (nameCoffee == coffee1) {
@@ -81,11 +81,11 @@ if (nameCoffee == coffee1) {
 let step2 = `Put ${sugar} spoon(s) of sugar.`;
 console.log(step2);
 
-if (cup == 'small') {
+if (sizeCup == 'small') {
     console.log(`The cost of coffee is ${priceSmall} rubles.`);
-} else if (cup == 'medium') {
+} else if (sizeCup == 'medium') {
     console.log(`The cost of coffee is ${priceMedium} rubles.`);
-} else if (cup == 'big') {
+} else if (sizeCup == 'big') {
     console.log(`The cost of coffee is ${priceBig} rubles.`);
 }
 
