@@ -37,7 +37,53 @@ if (operator == "*") {
 /* 1.3 Решите задачу с помощью пройденных тем:
 «Улитка ползёт вверх по стене высотой 5 метров. Каждый день она проползает вверх на 3 метра, а каждую ночь съезжает вниз на 2 метра. За сколько дней она доползёт до вершины стены.» */
 
-let height = 5;
+let dayDistance = 3;
+let nightDown = -2;
+let distance = 0;
+let days = 0;
+let wall = 5;
+
+//1
+if ((distance += dayDistance) <= wall) {
+  days++;
+  console.log(` - Current distance at the end of the day for day ${days} is ${distance} meter(s)`);
+  if (distance == wall) {
+    console.log('Ok');
+  } else {
+    console.log('Go forward!');
+  }
+  distance += nightDown;
+} 
+
+//2
+if ((distance += dayDistance) <= wall) {
+  days++;
+  console.log(` - Current distance at the end of the day for day ${days} is ${distance} meter(s)`);
+  if (distance == wall) {
+    console.log('Ok');
+  }
+  distance += nightDown; 
+}
+
+//3
+if ((distance += dayDistance) <= wall) {
+  days++;
+  console.log(` - Current distance at the end of the day for day ${days} is ${distance} meter(s)`);
+  if (distance == wall) {
+    console.log('Ok');
+  }
+  distance += nightDown;
+}
+
+//4
+if ((distance += dayDistance) <= wall) {
+  days++;
+  console.log(` - Current distance at the end of the day for day ${days} is ${distance} meter(s)`);
+  distance += nightDown;
+} 
+
+
+/* let height = 5;
 let up = 3;
 let down = 2;
 
@@ -46,47 +92,4 @@ let step2 = `Количество метров, которые проползе�
 let step3 = `За ${(height - up) * 1 / (up - down)} суток улитка поднимется на ${height - up} м.`;
 let step4 = `Улитка достигнет верха стены (с учетом последнего дня) за ${(height - up) * 1 / (up - down) + 1} дней.`;
 
-console.log(step1 +  step2 +  step3 +  step4);
-
-
-/* let kidsTicket, adultsTicket;
-let seniors, isVeterans;
-let age, price;
-let totalPrice, guestNum;
-
-kidsTicket = "Hello Kitty";
-adultsTicket = "Ray";
-age = +prompt("How old are you?");
-isVeterans = prompt("Are you veteran? Please enter yes/no answer", 'no');
-guestNum = +prompt("How many tickets do you need?");
-price = 100;
-
-if (age < 18) {
-  totalPrice = guestNum * (price / 2);
-  console.log(`Price for ${guestNum} tickets for ${kidsTicket} movie wil be ${totalPrice} USD`);
-} else if (age >= 18 && isVeterans === 'no') {
-  totalPrice = guestNum * price;
-  console.log(`Price for ${guestNum} tickets for ${adultsTicket} movie wil be ${totalPrice} USD`);
-} else if (age >= 18 && isVeterans === 'yes') {
-  totalPrice = guestNum * (price * 0.8);
-  console.log(`Price for ${guestNum} tickets for ${adultsTicket} movie wil be ${totalPrice} USD`);
-} */
-
-/* let age = 100;
-let amountTicket = 1;
-let price = 100;
-let totalPrice;
-
-if (age < 2) {
-  totalPrice = amountTicket * (price * 0.1);
-  console.log(`Price for you will be ${totalPrice} USD`);
-} else if (age < 18) {
-  totalPrice = amountTicket * (price*0.5);
-  console.log(`Price for you will be ${totalPrice} USD`);
-} else if (age < 65) {
-  totalPrice = amountTicket * price;
-  console.log(`Price for you will be ${totalPrice} USD`);
-} else {
-  totalPrice = amountTicket * (price * 0.6);
-  console.log(`Price for you will be ${totalPrice} USD`);
-} */
+console.log(step1 +  step2 +  step3 +  step4); */
