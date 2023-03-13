@@ -1,10 +1,10 @@
-"use strict"; 
+"use strict";
 
 /* 1. Напишите программу калькулятора со switch, обработайте возможные ошибки ввода  */
 
 let num1 = 1;
-let operator = "/";
 let num2 = 0;
+let operator = "/";
 let result;
 
 switch (operator) {
@@ -20,12 +20,12 @@ switch (operator) {
         result = num1 - num2;
         console.log(result);
         break;
-    case "/" :
+    case "/":        
         result = num1 / num2;
-        console.log(result);
+        num2 == 0 ? console.log('Not valid num2') : console.log(result);
         break;
     default:
-        console.log(Infinity);
+        console.log('Please enter a valid operator');
 }
 
 /* 2. Попробуйте внедрить в свою программу с кофе вложенный if */
@@ -50,7 +50,7 @@ let count2 = 0;
 
 for (let i = 0; i < arr.length; i++) {
     if (arr[i] === '(') {
-        count1 += 1;              
+        count1 += 1;
     } else if (arr[i] === ')') {
         count2 += 1;
     }
@@ -74,12 +74,31 @@ if (count2 % 2 == 0) {
 мы знаем, что оно означает “You are the best QA ever”.
 Нам нужно придумать программу дешифратор. */
 
-let text = ['Ybrobrubr', 'brabrrbrebr', 'brtbrhbrebr', 'brbbrebrsbrtbr', 'brQbrAbr', 'brebrvbrebrrbr'];
-
+let text = 'Ybrobrubr brabrrbrebr brtbrhbrebr brbbrebrsbrtbr brQbrAbr brebrvbrebrrbr';
+let word = text.split('');
+for (let i = 0; i < word.length; i++) {
+    if (word[i] === 'b' && word[i] === 'r') {
+        
+    }
+    
+}
 
 
 /* 2. Задачка посложнее*. Придумайте свой собственный шифр, а также программу, которая будет шифровать и затем дешифровщик к нему */
 
 
 /* Нарисовать елочку и ромб  с помощью циклов*/
-                      
+
+const lines = 4;
+let result = '';
+
+for (let i = 0; i <= lines; i++) {
+    for (let k = 0; k < lines - i; k++) {
+        result += " ";
+    }
+    for (let k = 0; k < 2 * i + 1; k++) {
+        result += "*";
+    }
+    result += "\n";
+}
+console.log(result);
