@@ -2,7 +2,7 @@
 
 //Svetlana Gusachenko:
 
-//Нахождение чисел и их сумма
+// ================= Нахождение чисел и их сумма =================
 
 let arr = ['what', 6, true, 'your', 15, ['hi', 33, '='], 'name'];
 //let count = 0;
@@ -22,7 +22,9 @@ for (let i = 0; i < arr.length; i++) {
 //console.log(count);
 console.log(sum);
 
-//Нахождение четных элементов массива
+
+
+// ================= Нахождение четных элементов массива =================
 
 let arr1 = ['what', 6, true, 'your', 15, ['hi', 33, '='], 'name'];
 
@@ -32,7 +34,9 @@ for (let i = 0; i < arr1.length; i++) {
     }
 }
 
-//Соединение слов из массива в строку
+
+
+// ================= Соединение слов из массива в строку =================
 
 let arr2 = ['what', 6, true, 'your', 15, ['hi', 33, '='], 'name'];
 let element = '';
@@ -47,7 +51,9 @@ for (let i = 0; i < arr2.length; i++) {
 console.log(element);
 console.log(typeof element);
 
-//Если элемент это строка то вывести длину строки
+
+
+// ================= Если элемент это строка то вывести длину строки =================
 
 let arr3 = ['what', 6, true, 'your', 15, ['hi', 33, '='], 'name'];
 
@@ -57,7 +63,9 @@ for (let i = 0; i < arr3.length; i++) {
     }
 }
 
-//Выводим в обратном порядке
+
+
+// ================= Выводим в обратном порядке =================
 
 let arr4 = ['what', 6, true, 'your', 15, ['hi', 33, '='], 'name'];
 console.log(arr4.length + ' - длина массива');
@@ -72,9 +80,11 @@ for (let i = arr4.length - 1; i >= 0; i--) {
 }
 
 
+
 //Tatiana Volk:
 
-/* У нас есть 4 сезона: Зима (12,1,2), Весна (3,4,5), Лето (6,7,8), Осень (9,10,11). Используя switch узнать, к какому сезону относится введенный месяц */
+/* ================= У нас есть 4 сезона: 
+Зима (12,1,2), Весна (3,4,5), Лето (6,7,8), Осень (9,10,11). Используя switch узнать, к какому сезону относится введенный месяц */
 
 let month = 4;
 let result;
@@ -108,7 +118,9 @@ switch (month) {
         console.log('Такого месяца не существует');
 }
 
-/* Write a function that will check if two given characters are the same case.
+
+
+/* ================= Write a function that will check if two given characters are the same case. ================= 
 
 If either of the characters is not a letter, return -1
 If both characters are the same case, return 1
