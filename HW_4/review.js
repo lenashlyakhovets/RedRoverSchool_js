@@ -55,3 +55,22 @@ for (let i = arr.length-1; i >= 0; i--) {
     }
 }
 console.log(result);
+
+
+
+//Stan P.:
+
+//================= Сортировка массива =================
+
+const arr = [45, 12, 4564, 456];
+console.log(arr);
+for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++ ) {
+        if (arr[i] > arr[j]) {
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+console.log(arr);
