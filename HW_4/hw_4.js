@@ -99,7 +99,7 @@ for (let i = 1; i <= x; i++) {
         str += num + space;
         num = num + (x - j);
     }
-    str += '\n'
+    str += '\n';
 }
 console.log(str);
 
@@ -227,7 +227,7 @@ let waterVolume;
 let price = 5;
 
 // welcome message
-console.log('Welcome to our self-service cafe!');
+console.log('Welcome to our self-service cafe!\n');
 console.log('We have different cup sizes. Please, choose one:');
 
 // show cup sizes and their prices
@@ -287,10 +287,10 @@ let step4 = ` Pour ${spoonSugar} spoon(s) of sugar in it.`;
 let step5 = ` Pour milk in a cup of coffee.`;
 let step6 = ' Stir coffee in a cup with a spoon.';
 let orderPrice = `The order price is ${price}$`;
-let result = `Enjoy your coffee`;
+let result = `Enjoy your coffee!`;
 
 // add steps to recipe
-let recipe = [step1, step2, step3, step4, step5];
+let recipe = [step1, step2, step3, step4, step5, step6];
 let clientRecipe = '';
 let isLactoseFree = false;
 for (let i = 0; i < recipe.length; i++) {
