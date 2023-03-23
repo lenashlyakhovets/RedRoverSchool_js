@@ -206,14 +206,15 @@ if (result1 == 0 && result2 == 0 && result3 == 0) {
 /* 2. Продумайте на будущее план развития своего кода с кофе, где в реальной жизни он мог бы быть использован. Начните создавать мини-документацию к своему проекту. Пропишите требования так, как вы хотели бы их видеть на своем проекте и чтобы посторонний человек мог в них разобраться. Скорее всего, что-то придется добавить или изменить позже.*/
 
 //                      Requirements for Coffee
-// When user first come he should see a welcome message
-// There are three types of cup sizes
-// User should be able to see cup prices for each size before an  order
-// There are two recipes at this time, we should able to update code if added new recipe
-// Show to a user the name and the  ingredients of each type of coffee before an order
-// User should be able to make an order, by choosing cup size and coffee type
-// When a choice is made, calculate the price based on cup size. Show steps for the recipe and order price.
-// If user is lactose free, remove milk step from the recipe
+// When user first come he should see a welcome message;
+// There are three types of cup sizes;
+// User should be able to see cup prices for each size before an  order;
+// There are two recipes at this time, we should able to update code if added new recipe;
+// Show to a user the name and the  ingredients of each type of coffee before an order;
+// User should be able to make an order, by choosing cup size and coffee type;
+// When a choice is made, calculate the price based on cup size. Show steps for the recipe and order price;
+// If user is lactose free, remove milk step from the recipe;
+// Details: price, names of coffee, ingredients, cup sizes, recipe, welcome message details or text, final message,do we have confirm option, payment method, how to calc price, business type, recipe for lactose free option, what milk choice do we have?, sugar Is or Not
 
 // declare all variables
 let nameCoffee;
@@ -232,25 +233,25 @@ let price = 5;
 
 // welcome message
 console.log('Welcome to our self-service cafe!\n');
-console.log('We have different cup sizes. Please, choose one:');
+console.log('We have different cup sizes. Please, choose one:\n');
 
 // show cup sizes and their prices
 let sizeCup = [smallCup, mediumCup, bigCup];
 for (let i = 0; i < sizeCup.length; i++) {
     if (sizeCup[i] == smallCup) {
-        console.log(sizeCup[i] + ' - ' + price + '$');
+        console.log(sizeCup[i] + ' - ' + price + '$;');
     } else if (sizeCup[i] == mediumCup) {
-        console.log(sizeCup[i] + ' - ' + price * 1.5 + '$');
+        console.log(sizeCup[i] + ' - ' + price * 1.5 + '$;');
     } else if (sizeCup[i] == bigCup) {
-        console.log(sizeCup[i] + ' - ' + price * 2 + '$');
+        console.log(sizeCup[i] + ' - ' + price * 2 + '$;');
     } if (i == sizeCup.length - 1) {
-        console.log('\n');
+        console.log('');
     }
 }
 
 // show coffee types with ingredients
-let americanoIngredients = `${americano}:\n 1 spoon of ${beansArabica} \n ${hotWater} \n milk \n`;
-let flatWhiteIngredients = `${flatWhite}:\n 1 spoon of ${beansEthiopian} \n ${coldWater} \n milk \n`;
+let americanoIngredients = `${americano}:\n 1 spoon of ${beansArabica}; \n ${hotWater}; \n milk; \n`;
+let flatWhiteIngredients = `${flatWhite}:\n 1 spoon of ${beansEthiopian}; \n ${coldWater}; \n milk; \n`;
 
 console.log('We have following coffee types: \n');
 let menu = [americanoIngredients, flatWhiteIngredients];
@@ -283,14 +284,14 @@ if (sizeCup == smallCup) {
 }
 
 // output for client
-let order = `You choosed a ${sizeCup} of ${nameCoffee}.\nFollow the steps:`;
-let step1 = ` Take a ${sizeCup}.`;
-let step2 = ` Put ${spoonCoffee} spoon(s) of coffee in it.`;
-let step3 = ` Pour ${waterVolume} of ${water} in a cup.`;
-let step4 = ` Pour ${spoonSugar} spoon(s) of sugar in it.`;
-let step5 = ` Pour milk in a cup of coffee.`;
-let step6 = ' Stir coffee in a cup with a spoon.';
-let orderPrice = `The order price is ${price}$`;
+let order = `You choosed a ${sizeCup} of ${nameCoffee}.\n \nFollow the steps:`;
+let step1 = `. Take a ${sizeCup}.`;
+let step2 = `. Put ${spoonCoffee} spoon(s) of coffee in it.`;
+let step3 = `. Pour ${waterVolume} of ${water} in a cup.`;
+let step4 = `. Pour ${spoonSugar} spoon(s) of sugar in it.`;
+let step5 = `. Pour milk in a cup of coffee.`;
+let step6 = '. Stir coffee in a cup with a spoon.';
+let orderPrice = `The order price is ${price}$.`;
 let result = `Enjoy your coffee!`;
 
 // add steps to recipe
@@ -304,77 +305,3 @@ for (let i = 0; i < recipe.length; i++) {
     clientRecipe = clientRecipe + (i + 1) + recipe[i] + '\n';
 }
 console.log(order + '\n' + clientRecipe + '\n' + orderPrice + '\n' + result);
-
-
-
-//================= Заказ проекта:
-
-//                      Requirements for Project
-// When user first come he should see a welcome message
-// There are three types of project
-// User should be able to see prices for each project before an order
-// Show to a user the name and the composition of each type of project before an order
-// When a choice is made, calculate the price based on project. Show steps for the client and order price.
-
-// declare all variables
-let nameProject;
-let redevelopment = 'Redevelopment of the apartment project';
-let newHouse = 'New house project';
-let entranceGroup = 'Entrance group project';
-let part;
-let partAS = 'architectural solutions';
-let partCD = 'constructive decisions';
-let partMP = 'master plan';
-let partIP = 'internal plumbing and sewerage';
-let partHV = 'heating, ventilation and airconditioning';
-let partES = 'electricity supply';
-let price = 100;
-
-// welcome message
-console.log('Welcome to our project department!\n');
-console.log('We do different project. Please, choose one:\n');
-
-// show name projects and their prices
-nameProject = [redevelopment, newHouse, entranceGroup];
-for (let i = 0; i < nameProject.length; i++) {
-    if (nameProject[i] == redevelopment) {
-        console.log(nameProject[i] + ' - ' + price * 1.5 + '$');        
-    } else if (nameProject[i] == newHouse) {
-        console.log(nameProject[i] + ' - ' + price * 9 + '$');        
-    } else if (nameProject[i] == entranceGroup) {
-        console.log(nameProject[i] + ' - ' + price * 5 + '$');        
-    } if (i == nameProject.length - 1) {
-        console.log('\n');
-    }
-}
-
-// show project composition
-let redevelopmentPart = `${redevelopment}:\n - ${partAS}\n - ${partCD}\n`;
-let newHousePart = `${newHouse}:\n - ${partAS}\n - ${partCD}\n - ${partMP}\n - ${partIP}\n - ${partHV}\n - ${partES}\n`;
-let entranceGroupPart = `${entranceGroup}:\n - ${partAS}\n - ${partCD}\n - ${partMP}\n`;
-
-console.log('What is included in each project:\n');
-part = [redevelopmentPart, newHousePart, entranceGroupPart];
-
-for (let i = 0; i < part.length; i++) {
-    console.log(part[i]);
-}
-
-// make a choice
-nameProject = newHouse;
-
-if (nameProject == redevelopment) {
-    price *= 1.5;
-} else if (nameProject == newHouse) {
-    price *= 9;
-} else if (nameProject == entranceGroup) {
-    price *= 5;
-}
-
-// output for client
-let order = `You choosed ${nameProject}.\nFolow the steps:`;
-let step1 = '1. Bring all the original data to us.';
-let step2 = '2. Conclude a contract with us.';
-let step3 = `3. The order price for ${nameProject} is ${price}$`;
-
-console.log(order + '\n' + step1 + '\n' + step2 + '\n' + step3);
