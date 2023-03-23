@@ -112,31 +112,49 @@ console.log(order + '\n' + clientRecipe + '\n' + orderPrice + '\n' + result);
 // Напишите функцию с калькулятором (используйте предыдущий код), в которую, в качестве параметров, передаются три переменные, две - числовые и третья отвечает за знак арифметической операции (*, /, -, +). Проверьте работу функции.
 // example:  function calculate(a, b, operator){}
 
-let num1 = 1;
-let num2 = 0;
-let operator = "/";
-let result;
+// Variant 1 =================
 
-switch (operator) {
-    case "*":
-        result = num1 * num2;
-        console.log(result);
-        break;
-    case "+":
-        result = +(num1 + num2);
-        console.log(result);
-        break;
-    case "-":
-        result = num1 - num2;
-        console.log(result);
-        break;
-    case "/":        
-        result = num1 / num2;
-        num2 == 0 ? console.log('Not valid num2') : console.log(result);
-        break;
-    default:
-        console.log('Please enter a valid operator');
+function calculate(a, b, operator) {
+    if (operator == '+') {
+        return a + b;
+    } else if (operator == '-') {
+        return a - b;
+    } else if (operator == '*') {
+        return a * b;
+    } else if (operator == '/') {        
+        if (operator == '/' && b === 0) {
+            return 'Нельзя делить на ноль!';
+        } else {
+            return a / b;
+        }
+    } else {
+        return 'Неверный оператор!';
+    }    
 }
+console.log(calculate(0, 1, '-'));
+
+
+
+// Variant 2 =================
+
+function calculate(a, b, operator) {
+    switch (operator) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            if (b === 0) {
+                return 'Нельзя делить на ноль!';
+            }
+            return a / b;
+        default:
+            return 'Неверный оператор!';
+    }
+}
+console.log(calculate(1, 0, '/'));
 
 
 
@@ -144,7 +162,30 @@ switch (operator) {
 
 // Напишите функцию, которая создает и выводит в консоль кастомное приветствие с именем, которое вы передаете в функцию.
 
+// Variant 1 =================
 
+function showMessage(userName) {
+    console.log('Hello ' + userName);
+}
+showMessage('Elena');
+
+
+
+// Variant 2 =================
+
+function showMessage(userName) {
+    return userName;
+}
+console.log('Hello ' + showMessage('Elena'));
+
+
+
+// Variant 3 =================
+
+function showMessage(userName) {
+    return userName = 'Elena';
+}
+console.log('Hello ' + showMessage());
 
 
 
