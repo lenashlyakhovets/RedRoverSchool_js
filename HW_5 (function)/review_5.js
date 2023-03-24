@@ -124,10 +124,9 @@ function indexOfElement(array, num) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === num) {
             return i;
-        } else {                            //ошибка
-            return -1;
-        }
+        } 
     }
+    return -1;
 }
 console.log(indexOfElement(arr, 88));
 console.log(arr.indexOf(88));
