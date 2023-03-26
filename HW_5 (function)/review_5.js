@@ -133,4 +133,29 @@ console.log(arr.indexOf(88));
 
 //Tatiana Volk:
 
+//================= 1. Задача =================
+
+// Variant 1
+let bmi = (height, weight) => {
+    return +(weight / height ** 2).toFixed(2);
+}
+console.log(bmi(1.7, 70));
+
+// Variant 2
+let bmi = (height, weight) => +(weight / height ** 2).toFixed(2);
+console.log(bmi(1.7, 70));
+
+
+
+//================= 2. Задача =================
+
+let celsius = f => ((f - 32) * 5 / 9).toFixed(1);
+console.log(celsius(100));
+
+
+
 //Stan P.:
+
+//================= 1. Задача =================
+
+
