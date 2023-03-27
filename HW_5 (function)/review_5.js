@@ -156,6 +156,114 @@ console.log(celsius(100));
 
 //Stan P.:
 
+//================= Function Declaration =================
+
+//console.log(sum(10, 20));                      вызвать можно выше и ниже объявленной функции!!!!!!
+
+function sum(num1, num2) {
+    return `${num1} + ${num2} = ${num1 + num2}`;
+}
+console.log(sum(10, 20));
+
+
+
+//================= Function Expression =================
+
+let sum = function(num1, num2) {
+    return `${num1} + ${num2} = ${num1 + num2}`;
+}
+console.log(sum(10, 20));                       //вызвать можно только ниже объявленной функции!!!!!!
+
+
+
+//================= Стрелочные функции =================
+
+const sum = (num1, num2) => `${num1} + ${num2} = ${num1 + num2}`;
+console.log(sum(10, 20));
+
+
+
+//================= Callback =================
+// Callback - функция, которая передается как аргумент в другую функцию
+
 //================= 1. Задача =================
 
+// Variant 1 (Function Declaration):
 
+function addition(num1, num2) {
+    return num1 + num2;
+}
+
+function substraction(num1, num2) {
+    return num1 - num2;
+}
+
+function product(num1, num2) {
+    return num1 * num2;
+}
+
+function result(number1, number2, something) {       // Callback-функция
+    return something(number1, number2);
+}
+console.log(result(10, 20, product));
+//console.log(product(5, 3));
+//console.log(product);
+
+
+
+// Variant 2 (Стрелочные функции):
+
+//const addition = (num1, num2) => num1 + num2;
+
+//const substraction = (num1, num2) => num1 - num2;
+
+//const product = (num1, num2) => num1 * num2;
+
+function result(num1, num2, product) {       
+    return product(num1, num2);
+}
+
+console.log(result(10, 20, (num1, num2) => num1 * num2));
+
+
+
+//================= 2. Задача =================
+
+function result(num1, num2, product) {       
+    return product(num1, num2);
+}
+
+const newFunction = (a, b) => a + b + b / a + b;
+console.log(result('b', 'a', newFunction));
+
+//================= Работа с неизвестным количеством параметров =================
+
+// Variant 1
+function sum() {
+    console.log(arguments);
+    return '';
+}
+
+console.log(sum(10, 30));
+
+// Variant 2
+function sum() {
+    let result = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result;
+}
+
+console.log(sum(10, 30));
+
+// Variant 3
+function sum() {
+    let result = 0;
+    for (el of arguments) {
+        result += el;
+    }
+    return result;
+}
+
+console.log(sum(10, 30));
