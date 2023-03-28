@@ -15,95 +15,103 @@
 // If user is lactose free, remove milk step from the recipe;
 // Details: price, names of coffee, ingredients, cup sizes, recipe, welcome message details or text, final message,do we have confirm option, payment method, how to calc price, business type, recipe for lactose free option, what milk choice do we have?, sugar Is or Not
 
-// declare all variables
-let nameCoffee;
-let americano = 'Americano';
-let flatWhite = 'Flat White';
-let beansArabica = 'Arabica ground beans';
-let beansEthiopian = 'Ethiopian ground beans';
-let smallCup = 'small cup';
-let mediumCup = 'medium cup';
-let bigCup = 'big cup';
-let water;
-let hotWater = 'hot water';
-let coldWater = 'cold water';
-let waterVolume;
-let price = 5;
+function showWelcomeMessage() {
+    console.log('Welcome to our self-service cafe!\n');
+    console.log('We have different cup sizes. Please, choose one:\n');
+}
 
-// welcome message
-console.log('Welcome to our self-service cafe!\n');
-console.log('We have different cup sizes. Please, choose one:\n');
 
-// show cup sizes and their prices
-let sizeCup = [smallCup, mediumCup, bigCup];
-for (let i = 0; i < sizeCup.length; i++) {
-    if (sizeCup[i] == smallCup) {
-        console.log(sizeCup[i] + ' - ' + price + '$;');
-    } else if (sizeCup[i] == mediumCup) {
-        console.log(sizeCup[i] + ' - ' + price * 1.5 + '$;');
-    } else if (sizeCup[i] == bigCup) {
-        console.log(sizeCup[i] + ' - ' + price * 2 + '$;');
-    } if (i == sizeCup.length - 1) {
-        console.log('');
+function showCupsOptions() {
+    let smallCup = 'small cup';
+    let mediumCup = 'medium cup';
+    let bigCup = 'big cup';
+    let price = 5;
+
+    let cupsOptions = [[smallCup, price], [mediumCup, (price * 1.5)], [bigCup, (price * 2)]];
+
+    for (let i = 0; i < cupsOptions.length; i++) {
+        console.log(cupsOptions[i][0] + ' - ' + cupsOptions[i][1] + '$;');
+        
+        if (i == cupsOptions.length - 1) {
+            console.log('');
+        }
     }
 }
 
-// show coffee types with ingredients
-let americanoIngredients = `${americano}:\n 1 spoon of ${beansArabica}; \n ${hotWater}; \n milk; \n`;
-let flatWhiteIngredients = `${flatWhite}:\n 1 spoon of ${beansEthiopian}; \n ${coldWater}; \n milk; \n`;
+function showCoffeeTypesAndIngredients() {
+    let americano = 'Americano';
+    let flatWhite = 'Flat White';
+    let beansArabica = 'Arabica ground beans';
+    let beansEthiopian = 'Ethiopian ground beans';
+    let hotWater = 'hot water';
+    let coldWater = 'cold water';
 
-console.log('We have following coffee types: \n');
-let menu = [americanoIngredients, flatWhiteIngredients];
+    let americanoIngredients = `${americano}:\n 1 spoon of ${beansArabica}; \n ${hotWater}; \n milk; \n`;
+    let flatWhiteIngredients = `${flatWhite}:\n 1 spoon of ${beansEthiopian}; \n ${coldWater}; \n milk; \n`;
 
-for (let i = 0; i < menu.length; i++) {
-    console.log(menu[i]);
-}
+    console.log('We have following coffee types: \n');
+    let menu = [americanoIngredients, flatWhiteIngredients];
 
-// make a choice
-nameCoffee = flatWhite;
-sizeCup = mediumCup;
-let spoonCoffee = 'one';
-let spoonSugar = 'two';
-
-if (nameCoffee == americano) {
-    water = hotWater;
-} else {
-    water = coldWater;
-}
-
-if (sizeCup == smallCup) {
-    waterVolume = '150 ml';
-    price *= 1;
-} else if (sizeCup == mediumCup) {
-    waterVolume = '200 ml';
-    price *= 1.5;
-} else if (sizeCup == bigCup) {
-    waterVolume = '300 ml';
-    price *= 2;
-}
-
-// output for client
-let order = `You choosed a ${sizeCup} of ${nameCoffee}.\n \nFollow the steps:`;
-let step1 = `. Take a ${sizeCup}.`;
-let step2 = `. Put ${spoonCoffee} spoon(s) of coffee in it.`;
-let step3 = `. Pour ${waterVolume} of ${water} in a cup.`;
-let step4 = `. Pour ${spoonSugar} spoon(s) of sugar in it.`;
-let step5 = `. Pour milk in a cup of coffee.`;
-let step6 = '. Stir coffee in a cup with a spoon.';
-let orderPrice = `The order price is ${price}$.`;
-let result = `Enjoy your coffee!`;
-
-// add steps to recipe
-let recipe = [step1, step2, step3, step4, step5, step6];
-let clientRecipe = '';
-let isLactoseFree = false;
-for (let i = 0; i < recipe.length; i++) {
-    if (isLactoseFree == true && recipe[i] == step5) {
-        continue;
+    for (let i = 0; i < menu.length; i++) {
+        console.log(menu[i]);
     }
-    clientRecipe = clientRecipe + (i + 1) + recipe[i] + '\n';
 }
-console.log(order + '\n' + clientRecipe + '\n' + orderPrice + '\n' + result);
+
+function setWaterForCoffee(coffeeType) {
+    if (coffeeType.toLowerCase() == 'Flat White') {
+        return water = 'cold water';
+    } else {
+        return water = 'hot water';
+    }
+}
+
+function getCupPrice(sizeCup) {
+    let price = 5;
+    if (sizeCup == 'small') {
+        return price;
+    } else if (sizeCup == 'medium') {
+        return price *= 1.5;
+    } else if (sizeCup == 'big') {
+        return price *= 2;
+    }
+}
+
+function showRecipeToClient(sizeCup, coffeeType, isLactoseFree, milk = 'half&half') {    
+    let water = setWaterForCoffee(coffeeType);
+    let price = getCupPrice(sizeCup)
+
+    let spoonCoffee = 'one';
+    let spoonSugar = 'two';
+
+    let order = `You choosed a ${sizeCup} of ${coffeeType.toUpperCase()}.\n \nFollow the steps:`;
+    let step1 = `. Take a ${sizeCup}.`;
+    let step2 = `. Put ${spoonCoffee} spoon(s) of coffee in it.`;
+    let step3 = `. Pour ${water} in a cup.`;
+    let step4 = `. Pour ${spoonSugar} spoon(s) of sugar in it.`;
+    let step5 = `. Pour ${milk} in a cup of coffee.`;
+    let step6 = '. Stir coffee in a cup with a spoon.';
+    let orderPrice = `The order price is ${price}$.`;
+    let result = `Enjoy your coffee!`;
+
+    // add steps to recipe
+    let recipe = [step1, step2, step3, step4, step5, step6];
+    let stepNum = 1;
+    let clientRecipe = '';    
+    for (let i = 0; i < recipe.length; i++) {
+        
+        if (isLactoseFree == true && recipe[i] == step5) {
+            continue;
+        }
+        clientRecipe = clientRecipe + (stepNum ++) + recipe[i] + '\n';
+    }
+    console.log(order + '\n' + clientRecipe + '\n' + orderPrice + '\n' + result);    
+}
+
+showWelcomeMessage();
+showCupsOptions();
+showCoffeeTypesAndIngredients();
+
+showRecipeToClient('small', 'latte', false, 'coconut milk');
 
 
 
@@ -158,6 +166,41 @@ console.log(calculate(1, 0, '/'));
 
 
 
+// Variant 3 =================
+
+function sum(a, b) {
+    return a + b;
+}
+function substract(a, b) {
+    return a - b;
+}
+function multiply(a, b) {
+    return a * b;
+}
+function divide(a, b) {
+    if (b == 0) {
+        return 'Division by 0 is not allowed! Enter another number'
+    }
+    return a / b;
+}
+
+function calc(a, b, sign) {
+    let result = 0;
+    if (isNaN(a) || isNaN(b)) result = 'Please, enter a number!'
+    else {
+        if (sign == '+') result = sum(a, b);
+        else if (sign == '-') result = substract(a, b);
+        else if (sign == '*') result = multiply(a, b);
+        else if (sign == '/') result = divide(a, b);
+        else result = 'Please, enter the right sign!'
+    }
+    return result;
+}
+
+console.log(calc(8, 0, '/'))
+
+
+
 //================= 2. Приветствие =================
 
 // Напишите функцию, которая создает и выводит в консоль кастомное приветствие с именем, которое вы передаете в функцию.
@@ -186,6 +229,16 @@ function showMessage(userName) {
     return userName = 'Elena';
 }
 console.log('Hello ' + showMessage());
+
+
+
+// Variant 4 =================
+
+function greetCustomer(name) {
+    let greetings = `Hi, ${name}! \nWelcome to our self-coffee!\n`
+    console.log(greetings);
+}
+greetCustomer('Elena');
 
 
 
