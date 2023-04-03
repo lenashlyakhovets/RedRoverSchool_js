@@ -5,7 +5,7 @@
 // --- compare with strings
 
 //can change
-console.log(array);
+
 let string = "abcde";
 console.log(string[2]);
 
@@ -17,7 +17,7 @@ console.log(string);
 
 
 array[2] = 'M'     // can change
-
+console.log(array);
 
 
 // =========String methods :  split(); join(); ========
