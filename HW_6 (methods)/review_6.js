@@ -194,4 +194,10 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 
-console.log(fib(8));
+console.log(fib(3));
+
+//================= Замыкание =================
+
+(function hello() {
+    console.log('Hello');
+}) ()
