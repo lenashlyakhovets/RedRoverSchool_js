@@ -39,7 +39,7 @@ console.log(check(arr, 85));
 
 // Variant 1
 
-//let arr = ["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"];
+//let arr = ["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"];       // <---- мы стоим здесь и считаем справа
 let arr = ["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"];
 //let arr = ["wolf"];
 
@@ -47,7 +47,7 @@ function warnTheSheep(queue) {
     if (queue[queue.length - 1] == 'wolf') {
         return "Pls go away and stop eating my sheep"
     } else {
-        let a = queue.length - (queue.indexOf('wolf') + 1);  // 8 - 6 = 2
+        let a = queue.length - (queue.indexOf('wolf') + 1);  // 7 - (1 + 1) = 5
         return `Oi! Sheep number ${a}! You are about to be eaten by a wolf!`
     }
 }
@@ -55,7 +55,7 @@ console.log(warnTheSheep(arr));
 
 // Variant 2. Начни искать овцу после индекса волка!!!
 
-//let arr = ["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"];
+//let arr = ["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"];              
 let arr = ["sheep", "wolf", "sheep", "sheep", "sheep", "sheep", "sheep"];
 //let arr = ["wolf"];
 
@@ -69,7 +69,7 @@ console.log(warnTheSheep(arr));
 
 
 
-//================= 3. My head is at the wrong end! =================
+//================= 3. My head is at the wrong end! (codewars) =================
 
 // Variant 1
 
@@ -94,12 +94,104 @@ console.log(fixTheMeerkat(arr1));
 
 
 
-//Tatiana Volk:
-
-
-
-
-
-
-
 //Stan P.:
+
+let count = 0;
+function recursion() {
+    //let count = 0;
+    count++
+    console.log(count)
+}
+recursion();
+recursion();
+recursion();
+
+//================= Рекурсия =================
+
+// Variant 1
+
+let count = 0;
+function recursion() {    
+    count++;
+    console.log(count);
+    recursion();
+}
+recursion();
+
+// Variant 2
+
+let count = 0;
+function recursion() {    
+    count++;
+    console.log(count);
+    if (count > 50) {
+        return;           // Чтобы рекурсия не зациклилась нужно условие!!
+    } 
+    recursion();
+}
+recursion();
+
+//================= Факториал =================
+
+// 1! = 1             
+// 2! = 1 * 2
+// 3! = 1 * 2 * 3 
+
+// Variant 1
+
+function factorial_1(n) {
+    let p = 1;
+    for (let i = 1; i <= n; i++) {
+        p *= i;
+    }
+    console.log(p);
+}
+
+factorial_1(5);
+
+// Variant 2
+
+let result = 1;
+function factorial_2(n) {
+    if (n == 1) return;
+    result *= n;
+    factorial_2(n-1);
+}
+
+factorial_2(5);
+console.log(result);
+
+// Variant 3
+
+function factorial_3(n) {
+    return n == 1 ? 1 : n * factorial_3(n-1);
+}
+
+console.log(factorial_3(5));
+
+// 3! = 1 * 2 * 3 
+// n = 3 -> 3 * factorial(2) -> 3 * 2 -> 6
+// n = 2 -> 2 * factorial(1) -> 2 * 1 -> 2
+// n = 1 -> 1
+
+// stack:
+// factorial(1)
+// factorial(2)
+// factorial(3)
+
+
+
+//================= Последовательность фибоначчи =================
+
+// Variant 1
+
+// 0, 1, 1, 2, 3, 5, 8, 13, 21 ...
+// 0  1  2  3  4  5  6   7   8
+
+function fib(n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+
+console.log(fib(8));

@@ -28,6 +28,7 @@ console.log(array);
 let string = "Hello World: QA JS !";
 //console.log(string);
 
+console.log(string.split());
 console.log(string.split(""));//each char
 console.log(string.split(" "));//each word
 console.log(string.split("o"));//each о
@@ -35,13 +36,13 @@ console.log(string.split("o"));//each о
 let stringNew = string.split(":")// each :
 console.log(stringNew);
 
-// let newArrayFromString = string.split("")
-// console.log(newArrayFromString);
+let newArrayFromString = string.split("")
+console.log(newArrayFromString);
 
 
 
 // === join(); конвертирует массив в строку, по умолчанию
-// разделяет символы запятой , but do not changeit
+// разделяет символы запятой , but do not change it
 
 let array = ['a', 'b', 'c', 1, 2, 3];
 console.log(array);
@@ -57,14 +58,14 @@ console.log(newStringFromArray)
 // ========== Методы arrays: pop/push, shift/unshift ======
 
 // push  ->  добавляет элемент(ы) в конец.
-// pop ->  удаляет последний элемент (и возвращает этот элемент!)
+// pop   ->  удаляет последний элемент (и возвращает этот элемент!)
 
 let letters = ['a', 'b', 'c', 'd', 'e'];
 console.log(letters);
 letters.push('f', 's');
 letters.push( 1, 5)
 letters.push(88)
-let c = letters.push('g');  //return quantity of elements
+let c = letters.push('g', 'k');  //return quantity of elements
 console.log(letters);
 console.log(c);
 
@@ -79,7 +80,7 @@ console.log(a5);
 t.push(a5)
 console.log(t)
 
-a = letters.pop();                       // returns deleted element
+a = letters.pop();                     // returns deleted element
 
 console.log(letters);
 console.log(a);
@@ -90,7 +91,7 @@ console.log(t)
 
 
 // unshift -> Добавляет элемент(ы) в начало массива
-// shift удаляет элемент в начале, сдвигая очередь, так
+// shift   -> Удаляет элемент в начале, сдвигая очередь, так
 // что второй элемент становится первым (и возвращает этот элемент!)
 
 const bigLetters = ['A', 'B', 'C', 'D', 'E'];
@@ -145,7 +146,7 @@ let w = 'K'
 const arr3 = [...arr1]//[...arr1, ...arr2];
 const arr4 = [1, 2, 3, 'a', 'b', 'c']
 console.log(arr)
-console.log(arr.push(...arr2) );
+console.log(arr.push(...arr2));
 console.log(arr)
 
 
@@ -166,6 +167,8 @@ console.log(fruits)
 console.log(fruits.toString())
 let f = fruits.toString()
 console.log(typeof f)
+
+console.log(f.split(','))
 
 
 //===================String methods===========
@@ -229,5 +232,7 @@ let num2 = 5
 console.log(num + num2)
 
 let fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.length)
 delete fruits[1];
-console.log(typeof fruits[1])
+console.log(typeof fruits[1]);
+console.log(fruits.length)
