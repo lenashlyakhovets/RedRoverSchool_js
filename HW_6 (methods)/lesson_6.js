@@ -28,7 +28,7 @@ console.log(array);
 let string = "Hello World: QA JS !";
 //console.log(string);
 
-console.log(string.split());
+console.log(string.split());  //вся строка в массив попадет
 console.log(string.split(""));//each char
 console.log(string.split(" "));//each word
 console.log(string.split("o"));//each о
@@ -39,6 +39,16 @@ console.log(stringNew);
 let newArrayFromString = string.split("")
 console.log(newArrayFromString);
 
+////////
+function createSteps(n) {
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(' '.repeat(i) + 'I');        
+    }
+    return arr;
+}
+
+console.log(createSteps(5).join('\n'));
 
 
 // === join(); конвертирует массив в строку, по умолчанию
@@ -129,8 +139,6 @@ console.log(myChildren)
 
 
 
-
-
 //============ push() + spread operator ...
 
 //arr1.push(...arr2);   // (...arr2) ==> ('a', 'b', 'c')
@@ -177,12 +185,23 @@ console.log(f.split(','))
 let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 console.log(txt.length)
 
+
 // === .slice()
 //Slice out a portion of a string from position 7 to position 13(13 not included)
 
 let str = "Apple, .Banana, Kiwi";
+//let part = str.slice();        // делает копию, если не указаны другие параметры 
+//console.log(part)
 let part = str.slice(7, 9);
 console.log(part, "=", str)
+
+
+// === .splice()
+
+const arr = ['t', 'e', 's', 't'];
+console.log(arr.splice(0, 1, 'T'));  // с 0 стартует и удаляет 1 элемент и заменяет на T (тут конкретно покажет удаляемый элемент)
+arr.splice(0, 1, 'T');
+console.log(arr);         // тут покажет новый массив
 
 
 //=== replace()
@@ -194,14 +213,12 @@ let newText = message.replace(/microsoft/i, "Apple");
 console.log(newText)
 
 
-
 // == charAt()
 //Get the first character in a string:
 
 let text = "HELLO WORLD";
 let letter = text.charAt(0);
 console.log(letter, text[0])
-
 
 
 //== repeat()
@@ -236,3 +253,38 @@ console.log(fruits.length)
 delete fruits[1];
 console.log(typeof fruits[1]);
 console.log(fruits.length)
+
+
+// == reverse()
+
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.reverse())
+
+
+//== indexOf()  
+
+// var.1
+let arr = "Hello World: QA JS !".split('');
+console.log(arr.indexOf('l'));                  // идет слева направо и показывает индекс элемента ближайший слева
+
+// var.2
+const arr = "Hello World: QA JS !".split('');
+let idx = arr.indexOf('l');
+while (idx != -1) {
+    console.log(idx);
+    idx = arr.indexOf('l', idx + 1)
+}
+
+
+
+//== lastIndexOf()
+
+// var.1
+let arr1 = "Hello World: QA JS !".split('');
+console.log(arr1.lastIndexOf('l'));             // идет слева направо и показывает индекс элемента ближайший справа
+
+// var.2 Проверка уникальности буквы
+const arr = "Hello World: QA JS !".split('');
+if (arr.indexOf('H') === arr.lastIndexOf('H')) {
+    console.log('Unique');    
+}
