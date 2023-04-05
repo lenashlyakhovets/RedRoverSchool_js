@@ -198,7 +198,7 @@ console.log(fib(3));
 
 (function hello() {
     console.log('Hello');
-}) ()
+}) ();
 
 
 

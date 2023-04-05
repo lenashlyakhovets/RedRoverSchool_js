@@ -5,6 +5,21 @@
 // Палиндром — слово, предложение или последовательность символов, которая абсолютно одинаково читается как в привычном направлении, так и в обратном. К примеру, “Anna” — это палиндром, а “table” и “John” — нет.
 // Дана строка; нужно написать функцию, которая позволяет вернуть значение true, если строка является палиндромом, и false — если нет. При этом нужно учитывать пробелы и знаки препинания.
 
+// Variant 1
+
+function checkPalindrom(word) {
+  let newWord = word.split('', ' ', ',').reverse().join('');
+  word = word.split('', ' ', ',').join('');
+  if (word == newWord) {
+    console.log('This is palindrome');
+  } else {
+    console.log('false');
+  }
+}
+checkPalindrom('Anna');
+
+// Variant 2
+
 function isPalindrome(str) {
     // удаляем все символы, кроме букв и цифр, и приводим к нижнему регистру
     str = str.toLowerCase().replace(/[^a-z0-9]+/g, '');

@@ -210,7 +210,7 @@ console.log(arr);         // тут покажет новый массив
 let message = "Please 5 visit 5 Microsoft!";
 //console.log(message)
 let newText = message.replace(/microsoft/i, "Apple");
-console.log(newText)
+console.log(newText);
 
 
 // == charAt()
@@ -276,7 +276,6 @@ while (idx != -1) {
 }
 
 
-
 //== lastIndexOf()
 
 // var.1
@@ -288,3 +287,44 @@ const arr = "Hello World: QA JS !".split('');
 if (arr.indexOf('H') === arr.lastIndexOf('H')) {
     console.log('Unique');    
 }
+
+
+//== find()       // нахождение первого элемента
+
+const arr = [2, 6, 2, 29, 39, 45];
+const isOdd = (element) => {
+    return element % 2 === 1;
+};
+console.log(arr.find(isOdd));
+
+
+//== findIndex()                    // нахождение первого индекса
+
+const arr = [2, 6, 2, 29, 39, 45];
+const isOdd = (element) => {
+    return element % 2 === 1;
+};
+console.log(arr.findIndex(isOdd));
+
+
+//== filter()                 // нахождение всех элементов
+
+const arr = [2, 6, 2, 29, 39, 45];
+const isOdd = (element) => {
+    return element % 2 === 1;
+};
+console.log(arr.filter(isOdd));
+
+
+//== map()    
+
+const arr = [2, 6, 2, 29, 39, 45];
+function squire(n) {
+    return n * n;
+}
+console.log(arr.map(squire));
+console.log(arr.map((n) => n * n));
+console.log(arr.map(n => n * n));
+
+
+
