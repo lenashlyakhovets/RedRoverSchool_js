@@ -309,11 +309,27 @@ console.log(arr.findIndex(isOdd));
 
 //== filter()                 // нахождение всех элементов
 
+//var. 1
 const arr = [2, 6, 2, 29, 39, 45];
 const isOdd = (element) => {
     return element % 2 === 1;
 };
 console.log(arr.filter(isOdd));
+
+//var.2
+let arr = [2, 6, 2, 29, 39, 45];
+let num = 2;
+
+function abc(arr1, div) {
+    arrNew = [];
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] % div === 1) {
+            arrNew.push(arr1[i]);
+        }
+    }   
+    return arrNew;
+}
+console.log(abc(arr, num));
 
 
 //== map()    
