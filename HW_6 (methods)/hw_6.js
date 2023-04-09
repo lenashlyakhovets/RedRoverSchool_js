@@ -21,13 +21,13 @@ checkPalindrom('Anna');
 // Variant 2
 
 function isPalindrome(str) {
-    // удаляем все символы, кроме букв и цифр, и приводим к нижнему регистру
-    str = str.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  // удаляем все символы, кроме букв и цифр, и приводим к нижнему регистру
+  str = str.toLowerCase().replace(/[^a-z0-9]+/g, '');
 
-    // разворачиваем строку и сравниваем с исходной
-    return str === str.split('').reverse().join('');
+  // разворачиваем строку и сравниваем с исходной
+  return str === str.split('').reverse().join('');
 }
-  
+
 console.log(isPalindrome('Anna')); // true
 console.log(isPalindrome('table')); // false
 console.log(isPalindrome('A man a plan a canal Panama')); // true
@@ -46,32 +46,55 @@ console.log(isPalindrome('Was it a car or a cat I saw?')); // true
 [ ‘{‘, ‘(’, ‘(‘, ‘)’, ‘)’, ‘}, ‘[‘, ‘]’ ] - у всех есть пара
 [ ‘{‘, ‘(’, ‘(‘, ‘)’, ‘)’, ‘}, ‘[‘, ‘[’, ‘)’ ] - у трех нет пары*/
 
+//Variant 1
+
+function check(myStr) {
+  let previousInputLength = 0;
+  // console.log(myStr)
+  while (myStr.length != previousInputLength) {
+    previousInputLength = myStr.length;
+    myStr = myStr.replace('()', '');
+    myStr = myStr.replace('{}', '');
+    myStr = myStr.replace('[]', '');
+  }
+  if (myStr.length == 0) {
+    return "Balanced";
+  } else {
+    return "Unbalanced: " + myStr;
+  }
+}
+console.log(check('[({{({}}}[]())]'));
+console.log("****************");
+console.log(check('[(({})()[])]'));
+
+//Variant 2
+
 function areBracketsPaired(str) {
-    const stack = [];
-    const brackets = {
-      "(": ")",
-      "[": "]",
-      "{": "}"
-    };
-    
-    for (let i = 0; i < str.length; i++) {
-      const char = str[i];
-      if (brackets[char]) {
-        stack.push(char);
-      } else if (char === ")" || char === "]" || char === "}") {
-        const lastBracket = stack.pop();
-        if (brackets[lastBracket] !== char) {
-          return false;
-        }
+  const stack = [];
+  const brackets = {
+    "(": ")",
+    "[": "]",
+    "{": "}"
+  };
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (brackets[char]) {
+      stack.push(char);
+    } else if (char === ")" || char === "]" || char === "}") {
+      const lastBracket = stack.pop();
+      if (brackets[lastBracket] !== char) {
+        return false;
       }
     }
-    
-    return stack.length === 0;
   }
-  
-  // Пример использования:
-  console.log(areBracketsPaired("{ [ ] ( ) }")); // true
-  console.log(areBracketsPaired("{ [ ( ] ) }")); // false
+
+  return stack.length === 0;
+}
+
+// Пример использования:
+console.log(areBracketsPaired("{ [ ] ( ) }")); // true
+console.log(areBracketsPaired("{ [ ( ] ) }")); // false
 
 
 
