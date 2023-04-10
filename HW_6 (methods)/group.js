@@ -39,7 +39,7 @@ function result(str) {
     for (let i = 0; i < str.length; i++) {
         if (str[i].length >= 4) {
             arrNew.push(str[i]);
-        }        
+        }
     }
     return arrNew;
 }
@@ -47,7 +47,7 @@ console.log(result(arr));
 
 // Var.3 ====================
 let arr = ['cat', 'dog', 'elephant', 'wolf', 'fox', 'hare'];
-function result(str) {    
+function result(str) {
     return str.length >= 4;
 }
 console.log(arr.filter(result));
@@ -90,10 +90,21 @@ console.log(arr.reverse());
 for (let i = 1; i <= 3; i++) {
     for (let j = 1; j <= 3; j++) {
         console.log(i);
-    } 
+    }
 }
 
 //================= Задача * =================
 // Изучите функцию printArray(), которая используется при работе с массивами. Используя эту функцию, вывеите в output все элементы массива: [[2,8], [87,4], [35,11]].
 
-let arr = [[2,8], [87,4], [35,11]];
+let arr = [[2, 8], [87, 4], [35, 11]];
+
+function printArray(arr1) {
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr1[i].length; j++) {
+            console.log(arr1[i][j]);
+        }
+    }
+    return arr1;
+}
+
+printArray(arr);

@@ -77,8 +77,6 @@ console.log(getCount('abracadabra'));
   
 
 
-
-
 //Tatiana Volk:
 
 //================= 1. Задача =================
