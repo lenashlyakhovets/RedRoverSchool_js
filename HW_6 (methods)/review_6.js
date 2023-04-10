@@ -200,6 +200,12 @@ console.log(fib(3));
     console.log('Hello');
 }) ();
 
+//== reduce() 
 
+const arr = [2, 6, 3, 28, 9, [49,57]];
+
+console.log(arr.reduce((sum, el, i) => sum + i % 2 === 1 ? el : - el, 0));
+
+console.log(arr[5].pop());
 
 
