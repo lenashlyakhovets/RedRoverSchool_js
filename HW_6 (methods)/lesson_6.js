@@ -28,10 +28,12 @@ console.log(array);
 let string = "Hello World: QA JS !";
 //console.log(string);
 
-console.log(string.split());  //вся строка в массив попадет
-console.log(string.split(""));//each char
-console.log(string.split(" "));//each word
+// console.log(string.split());  //вся строка в массив попадет
+// console.log(string.split(""));//each char
+// console.log(string.split(" "));//each word
 console.log(string.split("o"));//each о
+
+console.log(string.split("o", 2));//each о, ограничивает количество вывода символов
 //  console.log(string)
 let stringNew = string.split(":")// each :
 console.log(stringNew);
