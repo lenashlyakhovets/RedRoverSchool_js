@@ -50,9 +50,9 @@ console.log(isPalindrome('Was it a car or a cat I saw?')); // true
 
 function check(myStr) {
   let previousInputLength = 0;
-  // console.log(myStr)
-  while (myStr.length != previousInputLength) {
-    previousInputLength = myStr.length;
+  // console.log(myStr.length)
+  while (myStr.length != previousInputLength) {  //проверяем, что длина входной строки myStr не равна previousInputLength
+    previousInputLength = myStr.length;  //На первой итерации цикла, previousInputLength все еще равен 0, и длина myStr равна 16
     myStr = myStr.replace('()', '');
     myStr = myStr.replace('{}', '');
     myStr = myStr.replace('[]', '');
