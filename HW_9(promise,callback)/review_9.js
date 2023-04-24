@@ -98,6 +98,32 @@ for (let key in abc) {
 
 
 
-
-
 //Stan P.:===========================================================
+ 
+//================= Промисы ================= 
+
+//================= 1. Задача =================
+ 
+let isNothingHappened = false;  //true || false
+
+let willPassExam = new Promise(function (resolve, reject) {
+    if (isNothingHappened) {
+        let message = 'I got a diploma';
+        resolve(message);
+    } else {
+        let reason = new Error('Oops, something happened');
+        reject(reason);
+    }
+});
+
+let checkEvents = function () {
+    willPassExam
+        .then(function (noEvents) {
+            console.log(noEvents);
+        })
+        .catch(function (error) {
+            console.log(error.message);
+        });
+};
+
+checkEvents();
